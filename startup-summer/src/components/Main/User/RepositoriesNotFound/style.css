@@ -1,0 +1,24 @@
+.repositories{
+   margin-left: 402px;
+   margin-top: 197px;
+}
+
+.repositories-empty{
+   padding-top: 24px;
+   width: 243px;
+   height: 165px;
+}
+
+.repositories-empty__img{
+    margin: 0 auto 48px;
+   width: 76px;
+   height: 62px;
+}
+
+.repositories-empty__text{
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 31px; 
+   text-align: center;
+   color: #808080;
+}

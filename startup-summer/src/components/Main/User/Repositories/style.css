@@ -1,0 +1,12 @@
+
+.repositories{
+   margin-left: 85px;
+}
+
+.repositories__title{
+   margin-left: 2px;
+   margin-bottom: 5px;
+   font-weight: 600;
+   font-size: 32px;
+   line-height: 42px;
+}

@@ -1,0 +1,20 @@
+.initial-state{
+   padding-top: 23px;
+   width: 210px;
+   height: 196px;
+}
+
+.initial-state__img{
+   margin: 0 auto 47px;
+   width: 64.17px;
+   height: 64.17px;
+}
+
+.initial-state__text{
+   height: 62px;
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 140%;
+   text-align: center;
+   color: #808080;
+}

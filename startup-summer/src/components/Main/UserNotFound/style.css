@@ -1,0 +1,20 @@
+.user-not-found{
+   width: 156px;
+   height: 165px;
+   padding-top: 17px;
+}
+
+.user-not-found__img{
+   margin: 0 auto 42px;
+   width: 65px;
+   height: 75px;
+}
+
+.user-not-found__text{
+   height: 31px;
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 140%;
+   text-align: center;
+   color: #808080;
+}

@@ -1,0 +1,39 @@
+.conteiner-user{
+   margin: 28px 56px;
+}
+
+.personal-info{
+   width: 292px;
+}
+
+.personal-info__img{
+   margin-top: 11px;
+}
+
+.personal-info__img-avatar{
+   margin: 0 auto;
+   width: 280px;
+   height: 280px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.personal-info__name{
+   margin-top: 29px;
+   margin-bottom: 12px;
+   font-weight: 600;
+   font-size: 26px;
+   line-height: 34px;
+}
+
+.personal-info__github{
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 22px;   
+   color: #0064EB;  
+}
+
+.personal-info__follow{
+   margin-top: 25px; 
+   justify-content: space-between; 
+}

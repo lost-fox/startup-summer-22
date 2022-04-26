@@ -1,0 +1,24 @@
+input {
+   outline:none;
+   border: none;
+}
+
+.search-item{
+   position: relative;
+   margin-left: 22px;
+}
+
+#search{
+   width: 500px;
+   height: 40px;
+   padding-left: 44px;
+   border-radius: 6px;
+}
+
+.search-item__logo{
+   position: absolute;
+   width: 14px;
+   height: 14px;
+   top: 13px;
+   left: 19px;
+}
