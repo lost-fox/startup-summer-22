@@ -1,7 +1,7 @@
 import "./style.css";
 import searchImg from "../../../assets/image/search_icon.png";
 
-export const InitialState = () => {
+export const InitialStatePage = () => {
   return (
     <div className="initial-state">
       <img className="initial-state__img" src={searchImg} alt="search" />
