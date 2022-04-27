@@ -9,7 +9,7 @@ export interface GlobalContextActionUser {
 
 export interface GlobalContextActionRepositories {
   type: GlobalContextType.REPOSITORIES;
-  payload: RepositoriesType[];
+  payload: RepositoriesType[] | string;
 }
 
 export type GlobalContextAction =
