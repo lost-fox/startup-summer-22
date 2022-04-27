@@ -1,16 +1,22 @@
 import { createContext, Dispatch } from "react";
+import {
+  INITIAL_REPOSITORIES,
+  INITIAL_USER,
+} from "../components/Main/constants";
 import { RepositoriesType } from "../interface/RepositoriesType";
 import { UserType } from "../interface/UserType";
 import { GlobalContextAction } from "../reducer/GlobalContextAction";
 
 export interface GlobalContextState {
-  user: UserType | string;
-  repositories: RepositoriesType[] | string;
+  search: string;
+  user: UserType;
+  repositories: RepositoriesType[];
 }
 
 export const initialState: GlobalContextState = {
-  user: "",
-  repositories: "",
+  search: "",
+  user: INITIAL_USER,
+  repositories: INITIAL_REPOSITORIES,
 };
 
 export const GlobalContext = createContext<{

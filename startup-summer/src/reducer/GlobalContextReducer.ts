@@ -4,8 +4,9 @@ import { GlobalContextAction } from "./GlobalContextAction";
 import { GlobalContextType } from "./GlobalContextType";
 
 interface GlobalContextReducerState {
-  user: UserType | string;
-  repositories: RepositoriesType[] | string;
+  search: string;
+  user: UserType;
+  repositories: RepositoriesType[];
 }
 
 export const GlobalContextReducer = (
@@ -14,6 +15,11 @@ export const GlobalContextReducer = (
 ): GlobalContextReducerState => {
   const { type, payload } = action;
   switch (type) {
+    case GlobalContextType.SEARCH:
+      return {
+        ...state,
+        search: payload,
+      };
     case GlobalContextType.USER:
       return {
         ...state,

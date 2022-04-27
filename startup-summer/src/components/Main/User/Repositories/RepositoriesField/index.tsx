@@ -1,15 +1,20 @@
+import { RepositoriesFieldProps } from "../../../../../interface/RepositoriesFieldProps";
 import "./style.css";
 
-export const RepositoriesField = () => {
+export const RepositoriesField = (props: RepositoriesFieldProps) => {
+  const { name, html_url, description } = props.value;
+
   return (
     <div className="repositories-item">
-      <a className="repositories-item__title" href="#">
-        react-hot-loader
+      <a
+        className="repositories-item__title"
+        href={html_url}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {name}
       </a>
-      <p className="repositories-item__description">
-        Tweak React components in real time. Deprecated: use Fast Refresh
-        instead.
-      </p>
+      <p className="repositories-item__description">{description}</p>
     </div>
   );
 };
