@@ -9,6 +9,7 @@ import { GlobalContext } from "../../../context/GlobalContext";
 
 export const User = () => {
   const { state } = useContext(GlobalContext);
+  const { user, repositories } = state;
   const {
     login,
     avatar_url,
@@ -17,7 +18,7 @@ export const User = () => {
     public_repos,
     followers,
     following,
-  } = state.user;
+  } = user;
 
   console.log(state);
   return (
@@ -54,7 +55,11 @@ export const User = () => {
           />
         </div>
       </div>
-      {public_repos ? <Repositories /> : <RepositoriesNotFound />}
+      {public_repos && !repositories.hasOwnProperty("message") ? (
+        <Repositories />
+      ) : (
+        <RepositoriesNotFound />
+      )}
     </div>
   );
 };
