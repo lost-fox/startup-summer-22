@@ -9,12 +9,16 @@ import { GlobalContextAction } from "../reducer/GlobalContextAction";
 
 export interface GlobalContextState {
   search: string;
+  loading: boolean;
+  error: string;
   user: UserType;
   repositories: RepositoriesType[];
 }
 
 export const initialState: GlobalContextState = {
   search: "",
+  loading: false,
+  error: "",
   user: INITIAL_USER,
   repositories: INITIAL_REPOSITORIES,
 };

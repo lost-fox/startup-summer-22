@@ -6,6 +6,16 @@ export interface GlobalContextActionSearch {
   type: GlobalContextType.SEARCH;
   payload: string;
 }
+
+export interface GlobalContextActionLoading {
+  type: GlobalContextType.LOADING;
+  payload: boolean;
+}
+
+export interface GlobalContextActionError {
+  type: GlobalContextType.ERROR;
+  payload: string;
+}
 export interface GlobalContextActionUser {
   type: GlobalContextType.USER;
   payload: UserType;
@@ -18,5 +28,7 @@ export interface GlobalContextActionRepositories {
 
 export type GlobalContextAction =
   | GlobalContextActionSearch
+  | GlobalContextActionLoading
+  | GlobalContextActionError
   | GlobalContextActionUser
   | GlobalContextActionRepositories;
