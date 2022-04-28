@@ -7,4 +7,6 @@ export interface UserType {
   public_repos: number;
   followers: number;
   following: number;
+  documentation_url?: string;
+  message?: string;
 }
