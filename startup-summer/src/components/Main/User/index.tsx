@@ -4,11 +4,10 @@ import followingImg from "../../../assets/image/following_icon.png";
 import { FollowItem } from "./FollowItem";
 import { Repositories } from "./Repositories";
 import { RepositoriesNotFound } from "./RepositoriesNotFound";
-import { useContext } from "react";
-import { GlobalContext } from "../../../context/GlobalContext";
+import { useAppSelector } from "../../../hooks/hook";
 
 export const User = () => {
-  const { state } = useContext(GlobalContext);
+  const state = useAppSelector((state) => state.userReducer);
   const { user, repositories } = state;
   const {
     login,
@@ -20,7 +19,7 @@ export const User = () => {
     following,
   } = user;
 
-  console.log(state);
+  console.log(user);
   return (
     <div className="conteiner-user flex">
       <div className="personal-info">

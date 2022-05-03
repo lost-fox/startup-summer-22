@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../../../context/GlobalContext";
+import { useAppSelector } from "../../../../hooks/hook";
 import { RepositoriesField } from "./RepositoriesField";
 import "./style.css";
 
 export const Repositories = () => {
-  const { state } = useContext(GlobalContext);
+  const state = useAppSelector((state) => state.userReducer);
   const { repositories } = state;
 
   return (

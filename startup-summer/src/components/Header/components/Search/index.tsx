@@ -2,7 +2,7 @@ import "./style.css";
 import searchLogo from "../../../../assets/image/search_icon.png";
 import { SearchProps } from "../../../../interface/SearchProps";
 
-export const Search = (props: SearchProps) => {
+export const Search: React.FC<SearchProps> = (props) => {
   const { onKeyDown } = props;
   return (
     <div className="search-item">
