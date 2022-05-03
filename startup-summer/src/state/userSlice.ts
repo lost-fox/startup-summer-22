@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getData } from "../api/getData";
 import { INITIAL_USER, INITIAL_REPOSITORIES } from "../constants";
@@ -47,8 +46,8 @@ export const getUserData = createAsyncThunk(
       );
       dispatch(setUser(dataUser));
       dispatch(setRepositories(dataRepositories));
-    } catch (error: any) {
-      return rejectWithValue(error);
+    } catch (error) {
+      return rejectWithValue(error as Error);
     }
   }
 );

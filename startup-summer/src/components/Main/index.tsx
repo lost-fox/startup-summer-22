@@ -5,6 +5,7 @@ import "./style.css";
 import { User } from "./User";
 import { UserNotFound } from "./UserNotFound";
 import { useAppSelector } from "../../hooks/hook";
+import { ErrorPage } from "./ErrorPage";
 
 export const Main = () => {
   const state = useAppSelector((state) => state.userReducer);
@@ -13,7 +14,7 @@ export const Main = () => {
   if (!search.length) {
     return <InitialStatePage />;
   } else if (error) {
-    return <h1>{error}</h1>;
+    return <ErrorPage error={error} />;
   } else if (loading) {
     return <LoadingPage />;
   } else if (user.message) {
