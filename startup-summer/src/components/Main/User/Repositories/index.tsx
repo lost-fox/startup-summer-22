@@ -5,13 +5,12 @@ import "./style.css";
 
 export const Repositories = () => {
   const state = useAppSelector((state) => state.userReducer);
-  const { repositories } = state;
+  const { user, repositories } = state;
+  const { public_repos } = user;
 
   return (
     <div className="repositories">
-      <h1 className="repositories__title">
-        Repositories ({repositories.length})
-      </h1>
+      <h1 className="repositories__title">Repositories ({public_repos})</h1>
       {repositories.map((repository) => {
         return <RepositoriesField value={repository} key={repository.id} />;
       })}

@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getData } from "../api/getData";
-import { INITIAL_USER, INITIAL_REPOSITORIES } from "../constants";
+import {
+  INITIAL_USER,
+  INITIAL_REPOSITORIES,
+  AMOUNT_ITEM_TO_PAGE,
+} from "../constants";
 import { RepositoriesType } from "../interface/RepositoriesType";
 import { UserType } from "../interface/UserType";
 
@@ -12,7 +16,8 @@ interface InitialStateType {
   user: UserType;
   repositories: RepositoriesType[];
   currentPage: number;
-  perPage: number;
+  firstPageItem: number;
+  finishPageItem: number;
 }
 interface ErrorMessage {
   message: string;
@@ -22,6 +27,12 @@ interface GetUserDataType {
   search: string;
 }
 
+interface GetNextPageType {
+  search: string;
+  newPage: number;
+  public_repos: number;
+}
+
 const initialState: InitialStateType = {
   search: "",
   loading: false,
@@ -29,7 +40,8 @@ const initialState: InitialStateType = {
   user: INITIAL_USER,
   repositories: INITIAL_REPOSITORIES,
   currentPage: 1,
-  perPage: 1,
+  firstPageItem: 1,
+  finishPageItem: 4,
 };
 
 export const getUserData = createAsyncThunk(
@@ -43,13 +55,34 @@ export const getUserData = createAsyncThunk(
         `https://api.github.com/users/${search}`
       );
       const dataRepositories: RepositoriesType[] = await getData(
-        `https://api.github.com/users/${search}/repos?page=1&per_page=4`
+        `https://api.github.com/users/${search}/repos?page=1&per_page=${AMOUNT_ITEM_TO_PAGE}`
       );
       dispatch(setUser(dataUser));
       dispatch(setRepositories(dataRepositories));
     } catch (error: any) {
       return rejectWithValue(error);
     }
+  }
+);
+
+export const getNextPage = createAsyncThunk(
+  "github/getNextPage",
+  async (payload: GetNextPageType, thunkAPI) => {
+    const { dispatch } = thunkAPI;
+    const { search, newPage, public_repos } = payload;
+
+    const firstItem = newPage * AMOUNT_ITEM_TO_PAGE - 3;
+    let secondItem = newPage * AMOUNT_ITEM_TO_PAGE;
+
+    secondItem = secondItem > public_repos ? public_repos : secondItem;
+
+    const dataRepositories: RepositoriesType[] = await getData(
+      `https://api.github.com/users/${search}/repos?page=${newPage}&per_page=${AMOUNT_ITEM_TO_PAGE}`
+    );
+
+    dispatch(setRepositories(dataRepositories));
+    dispatch(setCurrentPage(newPage));
+    dispatch(setNumbersPage({ firstItem, secondItem }));
   }
 );
 
@@ -65,6 +98,13 @@ const userSlice = createSlice({
     },
     setRepositories(state, action) {
       state.repositories = action.payload;
+    },
+    setCurrentPage(state, action) {
+      state.currentPage = action.payload;
+    },
+    setNumbersPage(state, action) {
+      state.firstPageItem = action.payload.firstItem;
+      state.finishPageItem = action.payload.secondItem;
     },
     setError(state, action) {
       state.error = action.payload;
@@ -86,6 +126,12 @@ const userSlice = createSlice({
   },
 });
 
-export const { setSearch, setUser, setRepositories, setError } =
-  userSlice.actions;
+export const {
+  setSearch,
+  setUser,
+  setRepositories,
+  setCurrentPage,
+  setNumbersPage,
+  setError,
+} = userSlice.actions;
 export default userSlice.reducer;

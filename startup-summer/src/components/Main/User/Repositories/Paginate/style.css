@@ -13,6 +13,7 @@
 
 .paginate-item{
    margin: 0px 8px !important; 
+   cursor: pointer;
 }
 
 .break-me{
@@ -21,24 +22,33 @@
    font-size: 16px;
 }
 
-.previous{
+.previous {
    margin-right: 8px;
    width: 24px;
    height: 24px;
-   background: url(../../../../../assets/image/arrow.svg) no-repeat center center;
    transform: rotate(180deg);
+   text-align: center;
+   cursor: pointer;
+}
+
+.prev-button, .next-button {
+   content: url(../../../../../assets/image/arrow.svg);
+}
+
+.prev-button:hover, .next-button:hover {
+   content: url(../../../../../assets/image/arrow_active.svg);
 }
 
 .next{
    margin-left: 8px;
    width: 24px;
    height: 24px;
-   background: url(../../../../../assets/image/arrow.svg) no-repeat center center;
+   text-align: center;
+   cursor: pointer;
 }
 
 .active{
    padding: 0px 6px;
-   width: 21px;
    height: 25px;
    background: #0064EB;
    border-radius: 3px;
