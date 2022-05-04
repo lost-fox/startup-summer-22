@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../../../hooks/hook";
+import { Paginate } from "./Paginate";
 import { RepositoriesField } from "./RepositoriesField";
 import "./style.css";
 
@@ -14,6 +15,7 @@ export const Repositories = () => {
       {repositories.map((repository) => {
         return <RepositoriesField value={repository} key={repository.id} />;
       })}
+      <Paginate />
     </div>
   );
 };

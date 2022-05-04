@@ -19,7 +19,6 @@ export const Main = () => {
     return <LoadingPage />;
   } else if (user.message) {
     return <UserNotFound />;
-  } else {
-    return <User />;
   }
+  return <User />;
 };
