@@ -1,6 +1,19 @@
 .repositories-not{
    margin-left: 402px;
-   margin-top: 197px;
+   margin-top: 18vh;
+}
+
+@media (max-width: 1340px) {
+   .repositories-not{
+      margin-left: calc(150px + (402 - 150) * ((100vw - 950px) / (1340 - 950)));
+   }
+}
+
+@media (max-width:950px) {
+   .repositories-not{
+      margin-top: 50px;
+      margin-left: calc(32px + (375 - 32) * ((100vw - 320px) / (950 - 320)));
+   }
 }
 
 .repositories-empty{

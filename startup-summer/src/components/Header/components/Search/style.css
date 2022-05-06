@@ -22,3 +22,9 @@ input {
    top: 13px;
    left: 19px;
 }
+
+@media (max-width: 650px) {
+   #search{
+      width: calc(200px + (500 - 200) * ((100vw - 320px) / (650 - 320)));
+   }
+}

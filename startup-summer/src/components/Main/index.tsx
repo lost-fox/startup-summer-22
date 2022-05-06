@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { LoadingPage } from "./LoadingPage";
 import { InitialStatePage } from "./InitialStatePage";
 import "./style.css";

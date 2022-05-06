@@ -1,6 +1,8 @@
 
 .repositories{
+   position: relative;
    margin-left: 85px;
+   min-height: 630px;
 }
 
 .repositories__title{
@@ -9,4 +11,14 @@
    font-weight: 600;
    font-size: 32px;
    line-height: 42px;
+}
+
+@media (max-width: 950px) {
+   .repositories{
+      width: calc(300px + (400 - 300) * ((100vw - 320px) / (950 - 320)));;
+      margin: 40px auto 0px;
+   }
+   .repositories__title{
+      text-align: center;
+   }
 }

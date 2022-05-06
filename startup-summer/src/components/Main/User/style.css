@@ -1,5 +1,21 @@
 .conteiner-user{
-   margin: 28px 56px;
+   margin: 8vh auto 0;
+   max-width: 1366px;
+}
+@media (max-width: 1500px) {
+   .conteiner-user{
+      margin: 28px 56px; 
+   }
+}
+
+@media (max-width: 950px) {
+   .conteiner-user{
+      display: block;
+      margin: 28px auto;
+   }
+   .personal-info{
+      margin: 0 auto;
+   }
 }
 
 .personal-info{

@@ -2,7 +2,7 @@ import ReactPaginate from "react-paginate";
 import { AMOUNT_ITEM_TO_PAGE } from "../../../../../constants";
 import { useAppDispatch, useAppSelector } from "../../../../../hooks/hook";
 import { PageClickType } from "../../../../../interface/PageClickType";
-import { getNextPage } from "../../../../../state/userSlice";
+import { getNewPage } from "../../../../../state/userSlice";
 import "./style.css";
 
 export const Paginate = () => {
@@ -14,7 +14,7 @@ export const Paginate = () => {
 
   const handlePageClick = (event: PageClickType) => {
     const newPage = ++event.selected;
-    dispatch(getNextPage({ search, newPage, public_repos }));
+    dispatch(getNewPage({ search, newPage, public_repos }));
   };
 
   return (

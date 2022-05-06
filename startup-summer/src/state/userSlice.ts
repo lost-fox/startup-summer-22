@@ -65,13 +65,13 @@ export const getUserData = createAsyncThunk(
   }
 );
 
-export const getNextPage = createAsyncThunk(
+export const getNewPage = createAsyncThunk(
   "github/getNextPage",
   async (payload: GetNextPageType, thunkAPI) => {
     const { dispatch } = thunkAPI;
     const { search, newPage, public_repos } = payload;
 
-    const firstItem = newPage * AMOUNT_ITEM_TO_PAGE - 3;
+    const firstItem = newPage * AMOUNT_ITEM_TO_PAGE - (AMOUNT_ITEM_TO_PAGE - 1);
     let secondItem = newPage * AMOUNT_ITEM_TO_PAGE;
 
     secondItem = secondItem > public_repos ? public_repos : secondItem;

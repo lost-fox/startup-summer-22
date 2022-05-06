@@ -1,5 +1,7 @@
 .container-paginate{
-   float: right;
+   position: absolute;
+   bottom: 0;
+   right: 0;
    font-weight: 400;
    font-size: 14px;
    line-height: 25px;

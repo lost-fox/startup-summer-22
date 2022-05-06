@@ -19,3 +19,21 @@
    font-size: 16px;
    line-height: 19px;
 }
+
+@media (max-width: 1340px) {
+   .repositories-item{
+      width: calc(440px + (840 - 440) * ((100vw - 950px) / (1920 - 950)));
+   }
+   .repositories-item__description {
+      width: calc(440px + (777 - 350) * ((100vw - 950px) / (1920 - 950)));
+   }
+}
+
+@media (max-width: 950px) {
+   .repositories-item{
+      width: calc(300px + (400 - 300) * ((100vw - 320px) / (950 - 320)));
+   }
+   .repositories-item__description {
+      width: calc(220px + (320 - 220) * ((100vw - 320px) / (950 - 320)));
+   }
+}
