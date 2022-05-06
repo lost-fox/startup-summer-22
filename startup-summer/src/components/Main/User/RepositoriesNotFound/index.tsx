@@ -1,7 +1,7 @@
 import "./style.css";
 import emptyImg from "../../../../assets/image/empty_icon.png";
 
-export const RepositoriesNotFound = () => {
+export const RepositoriesNotFound: React.FC = () => {
   return (
     <div className="repositories-not">
       <div className="repositories-empty">

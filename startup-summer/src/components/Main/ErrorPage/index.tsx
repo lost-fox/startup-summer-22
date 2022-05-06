@@ -1,4 +1,5 @@
 import "./style.css";
+import errorImg from "../../../assets/image/error.gif";
 import { ErrorPageProps } from "../../../interface/ErrorPageProps";
 
 export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
@@ -6,11 +7,7 @@ export const ErrorPage: React.FC<ErrorPageProps> = (props) => {
   return (
     <div className="error-container">
       <h1 className="error-title">Error: {error} </h1>
-      <img
-        className="error-img"
-        src="https://c.tenor.com/eDchk3srtycAAAAj/piffle-error.gif"
-        alt="error"
-      />
+      <img className="error-img" src={errorImg} alt="error" />
     </div>
   );
 };

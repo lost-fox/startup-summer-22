@@ -6,7 +6,7 @@ import { KeyboardEvent } from "react";
 import { useAppDispatch } from "../../hooks/hook";
 import { getUserData, setSearch } from "../../state/userSlice";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const handleSearch = async (e: KeyboardEvent<HTMLInputElement>) => {

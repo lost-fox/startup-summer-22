@@ -1,7 +1,7 @@
 import "./style.css";
 import userImg from "../../../assets/image/user_icon.png";
 
-export const UserNotFound = () => {
+export const UserNotFound: React.FC = () => {
   return (
     <div className="container-main">
       <div className="user-not-found">

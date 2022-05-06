@@ -1,7 +1,7 @@
 import { RepositoriesFieldProps } from "../../../../../interface/RepositoriesFieldProps";
 import "./style.css";
 
-export const RepositoriesField = (props: RepositoriesFieldProps) => {
+export const RepositoriesField: React.FC<RepositoriesFieldProps> = (props) => {
   const { name, html_url, description } = props.value;
 
   return (

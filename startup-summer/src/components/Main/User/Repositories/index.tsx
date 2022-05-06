@@ -3,7 +3,7 @@ import { Paginate } from "./Paginate";
 import { RepositoriesField } from "./RepositoriesField";
 import "./style.css";
 
-export const Repositories = () => {
+export const Repositories: React.FC = () => {
   const state = useAppSelector((state) => state.userReducer);
   const { user, repositories } = state;
   const { public_repos } = user;

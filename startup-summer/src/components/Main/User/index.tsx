@@ -6,7 +6,7 @@ import { Repositories } from "./Repositories";
 import { RepositoriesNotFound } from "./RepositoriesNotFound";
 import { useAppSelector } from "../../../hooks/hook";
 
-export const User = () => {
+export const User: React.FC = () => {
   const state = useAppSelector((state) => state.userReducer);
   const { user, repositories } = state;
   const {
@@ -19,7 +19,6 @@ export const User = () => {
     following,
   } = user;
 
-  console.log(user);
   return (
     <div className="conteiner-user flex">
       <div className="personal-info">

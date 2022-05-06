@@ -5,7 +5,7 @@ import { PageClickType } from "../../../../../interface/PageClickType";
 import { getNewPage } from "../../../../../state/userSlice";
 import "./style.css";
 
-export const Paginate = () => {
+export const Paginate: React.FC = () => {
   const state = useAppSelector((state) => state.userReducer);
   const dispatch = useAppDispatch();
   const { user, firstPageItem, finishPageItem, search } = state;

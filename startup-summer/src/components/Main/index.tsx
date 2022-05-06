@@ -6,7 +6,7 @@ import { UserNotFound } from "./UserNotFound";
 import { useAppSelector } from "../../hooks/hook";
 import { ErrorPage } from "./ErrorPage";
 
-export const Main = () => {
+export const Main: React.FC = () => {
   const state = useAppSelector((state) => state.userReducer);
   const { search, loading, error, user } = state;
 

@@ -1,7 +1,7 @@
 import "./style.css";
 import searchImg from "../../../assets/image/search_icon.png";
 
-export const InitialStatePage = () => {
+export const InitialStatePage: React.FC = () => {
   return (
     <div className="container-main">
       <div className="initial-state">
