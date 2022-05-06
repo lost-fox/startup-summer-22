@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./style.css";
 import logo from "../../assets/image/github_icon.png";
 import { Search } from "./components/Search";

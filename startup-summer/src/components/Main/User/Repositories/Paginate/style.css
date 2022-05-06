@@ -9,6 +9,16 @@
    color: #808080;
 }
 
+@media (max-width: 400px) {
+   .container-paginate{
+      display: block;
+   }
+   .pagitane-count{
+      padding-bottom: 10px;
+      text-align: center;
+   }
+}
+
 .pagitane-count{
    margin: 0px 16px; 
 }
